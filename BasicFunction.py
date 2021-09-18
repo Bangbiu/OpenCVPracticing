@@ -21,7 +21,6 @@ def imgProcess(path):
     cv2.imshow("Dialated", dilated)
     cv2.imshow("Eroded", eroded)
 def interImgProc(path):
-    # Join
     img = cv2.resize(cv2.imread(path),(450,300))
     hor = np.hstack((img, img))
     cv2.imshow("Horizontal", hor)
@@ -60,6 +59,7 @@ if __name__ == '__main__':
     # Sketching
     # drawing()
     # Get Perspective
-    # getPersp("Res\\drawing.jpg", np.float32([[335,180],[1510,210],[15,858],[1870,825]]))
-    interImgProc("Res\\wisc.png")
+    getPersp("Res\\drawing.jpg", np.float32([[335,180],[1510,210],[15,858],[1870,825]]))
+    # Join
+    # interImgProc("Res\\wisc.png")
     cv2.waitKey(0)
