@@ -8,8 +8,9 @@ def getBoundingBox(img, overlay):
     for cont in contours:
         peri = cv2.arcLength(cont, True)
         approx = cv2.approxPolyDP(cont, 0.02 * peri, True)
+        if approx.shape[0] == 4:
+            print(approx.reshape(4,2))
         cv2.polylines(overlay,approx,True,(255,0,0),5)
-        print(peri)
         x, y, w, h = cv2.boundingRect(approx)
         cv2.rectangle(overlay,(x,y),(x+w,y+h),(0,0,0),1)
     return overlay

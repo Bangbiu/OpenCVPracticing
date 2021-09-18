@@ -11,7 +11,7 @@ def imgProcess(path):
     blurd = cv2.GaussianBlur(resized, (7, 7), 0)
     canny = cv2.Canny(resized, 100, 100)
     dilated = cv2.dilate(canny, kernel, iterations=1)
-    eroded = cv2.erode(resized, kernel, iterations=1)
+    eroded = cv2.erode(canny, kernel, iterations=1)
 
     cv2.imshow("Resized", resized)
     cv2.imshow("Cropped", img[500:1000,500:1000])
