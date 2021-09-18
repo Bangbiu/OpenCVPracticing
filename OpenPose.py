@@ -62,7 +62,7 @@ while cv.waitKey(1) < 0:
 
         if points[idFrom] and points[idTo]:
             cv.line(frame, points[idFrom], points[idTo], (0, 255, 0), 3)
-            cv.ellipse(frame, points[idFrom], (3, 3), 0, 0, 360, (0, 0, 255), cv.FILLED)
+            cv.ellipse(frame, points[idFrom], (3, 3), 0, 0, 360, (255, 0, 255), cv.FILLED)
             cv.ellipse(frame, points[idTo], (3, 3), 0, 0, 360, (0, 0, 255), cv.FILLED)
 
     t, _ = net.getPerfProfile()
